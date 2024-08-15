@@ -26,8 +26,9 @@ pipeline {
             steps {
                 sh '''
                 # Copy the build files to the deployment directory
-                sudo rm -rf /var/www/html/*
-                sudo cp -r build/* /var/www/html/
+                sudo su
+                rm -rf /var/www/html/*
+                cp -r build/* /var/www/html/
                 '''
             }
         }
